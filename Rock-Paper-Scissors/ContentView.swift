@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+//Text style that will be used in texts.
 struct Title: ViewModifier {
     func body(content: Content) -> some View {
         content
@@ -21,13 +22,18 @@ extension View {
 
 struct ContentView: View {
     let rockPaperScissor = ["rock", "paper", "scissors"]
-    
+    //Three boolean parameters for three user choice. This is used for animating and disabling buttons.
     @State private var isClicked1 = false
     @State private var isClicked2 = false
     @State private var isClicked3 = false
+    
+    //Random numbers that refers rock paper or scissors.
     @State private var gameChoice = Int.random(in: 0...2)
+    
     @State private var userScore = 0
     @State private var computerScore = 0
+    
+    //Background color of computer choice change according the who win the game.
     @State private var changeColor = false
 
     
@@ -52,7 +58,7 @@ struct ContentView: View {
                 HStack {
                     
                     VStack {
-                        
+                        //Button that refers rock
                         Button(action: {
                             self.animation1()
                             gameLogic(rockPaperScissor[0])
@@ -60,13 +66,14 @@ struct ContentView: View {
                             Image("\(rockPaperScissor[0])")
                                 .resizable()
                                 .frame(width: 120, height: 120)
-                                .background(isClicked1 ? Color.green : Color.blue)
+                                .background(isClicked1 ? Color.green : Color.blue) //Background will be green after clicked.
                                 .clipShape(Capsule())
-                                .rotationEffect(isClicked1 ? .degrees(0) : .degrees(180))
+                                .rotationEffect(isClicked1 ? .degrees(0) : .degrees(180)) //Button will turn 180 degree to other side.
                                 .animation(.spring())
                                 
-                            }.disabled(isClicked1 || isClicked2 || isClicked3)
+                            }.disabled(isClicked1 || isClicked2 || isClicked3) //All buttons will be deactived after clicking.
                         
+                        //Button that refers paper
                         Button(action: {
                             self.animation2()
                             gameLogic(rockPaperScissor[1])
@@ -80,6 +87,7 @@ struct ContentView: View {
                                 .animation(.spring())
                             }.disabled(isClicked1 || isClicked2 || isClicked3)
                         
+                        //Button that refers scissor
                         Button(action: {
                             self.animation3()
                             gameLogic(rockPaperScissor[2])
@@ -109,7 +117,7 @@ struct ContentView: View {
                         
                     }
                 }
-                
+                //Button will reset the round.
                 Button(action: {
                     resetRound()
                 }){
@@ -123,50 +131,52 @@ struct ContentView: View {
             }
         }
     }
+    //Animation for rock button
     func animation1() {
         self.isClicked1.toggle()
-        gameChoice = Int.random(in: 0...2)
+        
         
     }
+    //Animation for paper button
     func animation2() {
         self.isClicked2.toggle()
-        gameChoice = Int.random(in: 0...2)
-        
     }
+    //Animation for scissor button
     func animation3() {
         self.isClicked3.toggle()
-        gameChoice = Int.random(in: 0...2)
-        
     }
+    //Will reset the round for next round.
     func resetRound() {
         self.isClicked1 = false
         self.isClicked2 = false
         self.isClicked3 = false
         changeColor = false
+        gameChoice = Int.random(in: 0...2) //Again random number chosen for next round.
     }
+    
     func gameLogic(_ selection: String){
-        if selection == rockPaperScissor[gameChoice]{
+        if selection == rockPaperScissor[gameChoice]{ //When selections same.
 
         }
-        if selection == "rock" && gameChoice == 1 {
+        if selection == "rock" && gameChoice == 1 { //When user is rock and game paper
             computerScore += 1
             changeColor = true
         }
-        if selection == "rock" && gameChoice == 2 {
+        if selection == "rock" && gameChoice == 2 { //When user is rock and game is scissor
             userScore += 1
         }
-        if selection == "paper" && gameChoice == 0 {
+        if selection == "paper" && gameChoice == 0 { //When user is paper and game is rock
             userScore += 1
         }
-        if selection == "paper" && gameChoice == 2 {
+        if selection == "paper" && gameChoice == 2 { //When user is paper and game is scissor
             computerScore += 1
             changeColor = true
         }
-        if selection == "scissors" && gameChoice == 0 {
+        if selection == "scissors" && gameChoice == 0 { //When user is scissor and game is rock
             computerScore += 1
             changeColor = true
         }
-        if selection == "scissors" && gameChoice == 1 {
+        if selection == "scissors" && gameChoice == 1 { //When user is scissor and game is paper
             userScore += 1
         }
     }
