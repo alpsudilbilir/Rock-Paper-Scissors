@@ -134,16 +134,19 @@ struct ContentView: View {
     //Animation for rock button
     func animation1() {
         self.isClicked1.toggle()
+        gameChoice = Int.random(in: 0...2) //Again random number chosen for next round.
     }
     
     //Animation for paper button
     func animation2() {
         self.isClicked2.toggle()
+        gameChoice = Int.random(in: 0...2) //Again random number chosen for next round.
     }
     
     //Animation for scissor button
     func animation3() {
         self.isClicked3.toggle()
+        gameChoice = Int.random(in: 0...2) //Again random number chosen for next round.
     }
     
     //Will reset the round for next round.
@@ -152,7 +155,7 @@ struct ContentView: View {
         self.isClicked2 = false
         self.isClicked3 = false
         changeColor = false
-        gameChoice = Int.random(in: 0...2) //Again random number chosen for next round.
+        
     }
     
     func gameLogic(_ selection: String){
