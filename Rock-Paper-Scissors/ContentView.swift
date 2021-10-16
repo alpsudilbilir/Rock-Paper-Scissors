@@ -105,7 +105,7 @@ struct ContentView: View {
                     .padding()
                     
                     VStack {
-                        
+                        //Image of computer choice.
                         Image("\(rockPaperScissor[gameChoice])")
                             .resizable()
                             .frame(width: 120, height: 120)
@@ -134,17 +134,18 @@ struct ContentView: View {
     //Animation for rock button
     func animation1() {
         self.isClicked1.toggle()
-        
-        
     }
+    
     //Animation for paper button
     func animation2() {
         self.isClicked2.toggle()
     }
+    
     //Animation for scissor button
     func animation3() {
         self.isClicked3.toggle()
     }
+    
     //Will reset the round for next round.
     func resetRound() {
         self.isClicked1 = false
