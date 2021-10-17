@@ -24,11 +24,11 @@ As image 3 asset used(rock image, paper image and scissor image).
 
 You can download those assets from:
 
-Rock: https://github.com/alpsudilbilir/Rock-Paper-Scissors-SwiftUI/raw/master/Rock-Paper-Scissors/Assets.xcassets/rock.imageset/rock.png
+[Rock](https://github.com/alpsudilbilir/Rock-Paper-Scissors-SwiftUI/raw/master/Rock-Paper-Scissors/Assets.xcassets/rock.imageset/rock.png)
 
-Scissors: https://github.com/alpsudilbilir/Rock-Paper-Scissors-SwiftUI/raw/master/Rock-Paper-Scissors/Assets.xcassets/scissors.imageset/scissors.png 
+[Scissors](https://github.com/alpsudilbilir/Rock-Paper-Scissors-SwiftUI/raw/master/Rock-Paper-Scissors/Assets.xcassets/scissors.imageset/scissors.png)
 
-Paper: https://github.com/alpsudilbilir/Rock-Paper-Scissors-SwiftUI/raw/master/Rock-Paper-Scissors/Assets.xcassets/paper.imageset/paper.png
+[Paper](https://github.com/alpsudilbilir/Rock-Paper-Scissors-SwiftUI/raw/master/Rock-Paper-Scissors/Assets.xcassets/paper.imageset/paper.png)
 
 ## Code
 You can review all the code from [here](https://github.com/alpsudilbilir/Rock-Paper-Scissors-SwiftUI/blob/master/Rock-Paper-Scissors/ContentView.swift). 
