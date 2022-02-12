@@ -1,4 +1,4 @@
-# Rock Paper Scissors SwiftUI 🤘
+# Rock Paper Scissors 🤘
 ![rock-paper-scissors-icons](https://user-images.githubusercontent.com/87194129/137582401-370c6400-3894-4703-bb0a-b6ed1262264a.jpeg)
 
 ## How to play ✂
